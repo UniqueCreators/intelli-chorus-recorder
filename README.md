@@ -1,11 +1,29 @@
 # Intelli Chorus Recorder
 
-**Version:** 2.0  
-**Author:** Unique Creators ([www.uniquecreators.net](https://www.uniquecreators.net))  
 
 ## Introduction
 
 Intelli Chorus Recorder is a professional-grade REAPER extension engineered to automate and streamline the intricate process of recording layered vocals, harmonies, and instrumental doubles. Developed by Unique Creators, this script is built from the ground up with a core philosophy of universal design and total accessibility. It ensures seamless compatibility with screen readers like NVDA and JAWS via OSARA, providing a robust, hands-free workflow for all audio professionals.
+
+
+### ⚠️ **SECURITY WARNING: MALICIOUS CLONE DETECTED**
+
+We have identified a malicious clone repository impersonating Intelli Chorus Recorder and distributing malware.
+
+**Official Project:** https://github.com/UniqueCreators/intelli-chorus-recorder  
+**Official Website:** https://www.uniquecreators.net  
+
+❌ **DO NOT install from any other repository or unauthorized sources**
+
+If you are installing Intelli Chorus Recorder, ensure you:
+1. Use the official UniqueCreators repository
+2. Install via ReaPack using our official URL (see Installation section below)
+3. Verify the author is **Unique Creators** (https://www.uniquecreators.net)
+
+For security concerns, contact: www.uniquecreators.net/contact
+
+---
+
 
 ## Features
 
