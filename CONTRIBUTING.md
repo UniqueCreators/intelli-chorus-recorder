@@ -1,55 +1,50 @@
-Contributing to Intelli Chorus Recorder
-First off, thank you for considering contributing! This is an open-source project from Unique Creators, and we welcome any help to make it more powerful and accessible for everyone.
+# Contributing to Intelli Chorus Recorder
 
-How Can I Contribute?
-There are many ways to contribute, and not all of them involve writing code.
+First off, thank you for considering contributing! The **Intelli Chorus Recorder** is an open-source initiative from **Unique Creators**, and we welcome developers, audio engineers, and sound designers to help us refine and expand its capabilities. 
 
-Reporting Bugs: If you find a bug, please open an issue on our project's GitHub page. Describe the issue in detail, including the steps to reproduce it, your REAPER version, and your OS.
+At Unique Creators, we practice **Universal Design**. We do not build "for the blind"; we engineer mainstream products where accessibility is the core architecture, not an afterthought. If you share this vision, you are in the right place.
 
-Suggesting Enhancements: Have an idea for a new feature or an improvement to an existing one? Open an issue and describe your suggestion.
+## How Can I Contribute?
 
-Writing Documentation: If you think the README.md or other documentation can be improved, please let us know.
+There are many ways to contribute, and not all of them involve writing code:
 
-Submitting Code: If you're a developer, you can help us fix bugs or add new features.
+- **Reporting Bugs:** If you discover a bug, please open an issue on our GitHub repository. Provide detailed steps to reproduce it, your REAPER version, OS details, and the screen reader (if applicable).
+- **Suggesting Enhancements:** Have an idea for a new feature or workflow automation? Open an issue and describe your vision.
+- **Improving Documentation:** Documentation is just as important as code. If you find gaps in our `README.md` or code comments, PRs are highly appreciated.
+- **Submitting Code:** Ready to build? We welcome bug fixes, new features, and modular optimizations.
 
-Code Contribution Guidelines
-To ensure the project remains maintainable, scalable, and accessible, please follow these guidelines when submitting code.
+## Code Contribution Guidelines
 
-Project Structure
-The script is broken down into several modules with specific responsibilities. Please respect this structure.
+To ensure the project remains hyper-maintainable, scalable, and rigidly accessible, please adhere strictly to these paradigms when submitting code:
 
-main.lua: The main entry point. It orchestrates the loading and execution of other modules.
+### 1. Project Structure
 
-config.lua: Contains all default settings, validation rules, and user-facing text strings. Never hard-code a string in another module.
+The script architecture is thoroughly modularized, separating UI, logic, and structure. Please respect this separation of concerns:
 
-ui_wizard.lua: Handles all user interaction. All dialogs and prompts should be in this file.
+- `main.lua`: The orchestrator. Manages initialization, module loading, and top-level execution flows.
+- `config.lua`: The central hub for default settings, validation rules, and all user-facing text strings. **Rule:** Never hard-code a string or parameter in another module.
+- `ui_wizard.lua`: Exclusively handles user interaction and persistence logic (`.ini` parsing/writing). All dialogs and prompts live here.
+- `core_logic.lua`: Contains the core recording, automation, and REAPER API interactions. *Must remain 100% devoid of UI prompts.*
+- `lib/utils.lua`: For generic, decoupled utility functions and error reporting capable of reuse across our ecosystem.
 
-core_logic.lua: Contains the core recording and REAPER API logic. This module should not contain any UI code.
+### 2. Coding Philosophy & Style
 
-lib/utils.lua: For generic, reusable helper functions that could be used in other projects.
+- **Universality & Usability:** *Mandatory.* There are no separate "blind modes." We build a single, unified interface usable by all. Any new features must seamlessly integrate auditory feedback (`utils.speak`) for non-visual operations. Feedback sounds or conversational speech flows are essential.
+- **DRY Architecture:** Modular functions, scalable coding, maintainable logic, and utility-driven architecture. Reuse where possible.
+- **Comments & Documentation:** Code should explain itself. Comment minimally, exclusively reserving comments for complex logic blocks or regular expressions.
+- **Robust Error Handling:** No silent crashes! Functions executing API calls should gracefully catch errors. Use paired returns (`ok, result_or_error`) for verifiable functions. Provide user-friendly, non-cryptic error messages.
 
-Coding Style
-Clarity is Key: Write clean, readable code with descriptive variable and function names.
+### 3. Submitting a Pull Request
 
-Comments: Comment your code where necessary, especially for complex logic. Use LuaDoc-style comments for functions (--[[ ... ]]).
+Ready to merge? Follow the standard GitHub collaborative flow:
 
-Error Handling: Functions that can fail should return two values: ok, result. ok is a boolean (true for success, false for failure). result is the return value on success or an error message string on failure.
+1. **Fork** the repository.
+2. **Create a branch** for your feature or bugfix (`git checkout -b feature/your-amazing-feature`).
+3. **Commit** your changes following our guidelines, with clean, descriptive commit messages.
+4. **Test** your changes thoroughly over an actual recording session within REAPER.
+5. **Push** your branch to your fork (`git push origin feature/your-amazing-feature`).
+6. **Open a Pull Request** against the main repository, strictly detailing what you changed, why you changed it, and how it aligns with the Universal Design philosophy.
 
-Accessibility First: All new features must be fully accessible. Any new user interaction must provide feedback via the utils.speak() function.
+Thank you for helping us build elite tools for the global audio community!
 
-Submitting a Pull Request
-Fork the repository.
-
-Create a new branch for your feature or bugfix (git checkout -b feature/amazing-new-feature).
-
-Make your changes, adhering to the guidelines above.
-
-Test your changes thoroughly.
-
-Commit your changes with a clear and descriptive commit message.
-
-Push your branch to your fork (git push origin feature/amazing-new-feature).
-
-Open a pull request on the main repository, explaining the changes you made.
-
-Thank you for helping us build better tools for the audio community!
+*We are Unique Creators, and creation is our passion!*

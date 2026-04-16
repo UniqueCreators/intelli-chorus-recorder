@@ -1,60 +1,73 @@
-Intelli Chorus Recorder (Accessible & Modular Edition)
-Version: 2.0
-Author: Unique Creators (www.uniquecreators.net)
+# Intelli Chorus Recorder
 
-Intelli Chorus Recorder is a powerful REAPER script designed to automate and streamline the process of recording layered vocals, harmonies, or instrumental doubles. It is built from the ground up with accessibility as a primary focus, ensuring full compatibility with screen readers like NVDA and JAWS via OSARA.
+**Version:** 2.0  
+**Author:** Unique Creators ([www.uniquecreators.net](https://www.uniquecreators.net))  
 
-This new modular version is an open-source project, inviting community contributions to make it even better.
+## Introduction
 
-Features
-Step-by-Step Guided Setup: An accessible wizard guides you through every setting, eliminating confusion.
+Intelli Chorus Recorder is a professional-grade REAPER extension engineered to automate and streamline the intricate process of recording layered vocals, harmonies, and instrumental doubles. Developed by Unique Creators, this script is built from the ground up with a core philosophy of universal design and total accessibility. It ensures seamless compatibility with screen readers like NVDA and JAWS via OSARA, providing a robust, hands-free workflow for all audio professionals.
 
-Session Persistence: Save your settings (track count, panning, etc.) and load them instantly on the next run.
+## Features
 
-Automated Track Creation: Automatically creates, names, and numbers tracks for you.
+- **Step-by-Step Setup Wizard:** An intuitive, fully accessible initialization process ensures all parameters are configured swiftly without confusion.
+- **Session Persistence:** Retain your project settings (track counts, optimal panning, UI preferences) across sessions to maintain creative momentum. 
+- **Automated Routing & Track Management:** Automatically generates, routes, organizes into folders, and names tracks, reducing administrative overhead.
+- **Intelligent Stereo Panning:** Dynamically calculates mathematically accurate stereo spreads for multiple recording passes based on defined width.
+- **Automated Punch-In/Out:** Operates via time selections to perfectly execute automated punch-ins and punch-outs for an unlimited sequence of takes, minimizing user intervention.
+- **Screen Reader First:** Integrated spoken auditory feedback (via OSARA) at every phase over the entire recording loop.
 
-Intelligent Panning: Spreads your tracks across the stereo field automatically based on your preference.
+## Installation
 
-Hands-Free Punch Recording: Just set a time selection and the script handles the punch-in and punch-out for every take.
+We utilize ReaPack to ensure you always have the latest, most stable version of our tools. Follow these steps to install the Intelli Chorus Recorder:
 
-Full Accessibility: Provides clear, spoken feedback at every step of the process.
+1. **Install ReaPack:** If you haven't already, download and install [ReaPack](https://reapack.com/) for REAPER.
+2. **Launch REAPER:** Open your digital audio workstation.
+3. **Open Extensions:** Press `Alt + X` to open the Extensions menu.
+4. **Access ReaPack:** Navigate to the `ReaPack` option and press `Enter` (or click) to open its submenu.
+5. **Import Repository:** Select the `Import repositories` option.
+6. **Add URL:** Paste the Unique Creators repository URL: `https://raw.githubusercontent.com/UniqueCreators/ReaScripts/main/index.xml`
+7. **Confirm:** Press `Enter` or click `OK`.
+8. **Sync Packages:** To download the newly added repository data, go to the `Extensions` menu -> `ReaPack` -> `Manage repositories`.
+9. **Browse:** Scroll to the bottom of the list to verify the URL is present, then press `Alt + B` or click the `Browse packages` button.
+10. **Search:** In the `Filter` edit box, search for **Intelli Chorus Recorder** and press the `Down Arrow` once to focus the list. You will find the script there.
+11. **Select Actions:** Press the `Tab` key to reach the `Actions` button and click it.
+12. **Install:** Choose the `Install` option (the very first item in the context menu).
 
-Workflow Options: Includes popular features like muting previous takes, folder organization, and auto-saving.
+*Congratulations! The script is now installed and ready to be used.*
 
-Installation
-This script is distributed as a complete folder.
+## How to Use
 
-Download the Intelli Chorus Recorder folder.
+Intelli Chorus Recorder requires minimal setup per use, relying on standard REAPER time selections to handle the heavy lifting.
 
-In REAPER, navigate to the Options menu and select "Show REAPER resource path in explorer/finder...".
+1. **Set the Recording Range:** First, create a time selection in your REAPER project that spans the exact duration you intend to record (e.g., the 8-bar chorus). *This step is mandatory.*
+2. **Execute the Script:** Run the script via the REAPER Actions list, or assign it to a custom keyboard shortcut for rapid access.
+3. **Configure the Wizard:** 
+    - Upon first launch, the wizard will sequentially prompt you for your setup: Track Count, Max Stereo Pan Width, Input Channel, Track Naming, Folder Grouping, and playback behaviors like Metronome and Count-in.
+    - If you have run the script before, it will first ask if you simply want to load your previously saved session settings.
+4. **Perform:** Once initialized, the script automatically stops playback, readies the tracks, and begins recording the first layer. 
+5. **Loop and Stack:** It will flawlessly auto-stop at the end of the time selection, arm the next track, and begin recording the next take. 
+6. **Completion:** A confirmation prompt will notify you when all requested tracks have been beautifully stacked, panned, and recorded.
 
-Open the Scripts folder.
+## FAQs
 
-Copy the entire Intelli Chorus Recorder folder into this Scripts folder.
+**Q: Do I need to be a screen reader user to benefit from this script?**  
+A: No! While built with extreme accessibility in mind, the automation features save massive amounts of time for any engineer or artist laying down vocal stacks or doubles.
 
-In REAPER, open the Action List (Actions > Show action list...).
+**Q: Why does the script tell me a prerequisite is missing?**  
+A: The script requires an active time selection in REAPER so it knows exactly when to punch in and out automatically. 
 
-Click the "New action..." button and then "Load ReaScript...".
+**Q: Can I use different inputs for each track?**  
+A: Currently, the setup wizard asks for a single physical input channel designed for recording a single performer stacking takes sequentially.
 
-Navigate into the Intelli Chorus Recorder folder and select the main.lua file.
+**Q: Does it work with the metronome?**  
+A: Yes. If your metronome is disabled when firing the script, it will actively prompt you and give you the choice to enable it.
 
-The script is now in your Action List. You can assign a keyboard shortcut to it for easy access.
+## Support & Contributions
 
-How to Use
-Create a Time Selection: In your REAPER project, create a time selection that covers the part you want to record (e.g., the chorus). This is a mandatory step.
+This modular release is open-source. We welcome community contributions! Please review the `CONTRIBUTING.md` file included in this repository.
 
-Run the Script: Trigger the script using its keyboard shortcut or by running it from the Action List.
+For technical support, custom accessibility tools, studio inquiries, or to report bugs:
+- **Open a Ticket:** Contact us via our official portal at [www.uniquecreators.net/contact](https://www.uniquecreators.net/contact)
+- **Website:** [www.uniquecreators.net](https://www.uniquecreators.net)
 
-Follow the Wizard:
-
-If it's your first time, a setup wizard will appear, asking you questions one by one (e.g., "How many tracks?", "What is the track name?").
-
-If you have run the script before, it will ask if you want to use your previously saved settings.
-
-Record: Once the setup is complete, the script will arm the first track and begin recording. Sing or play along with your part.
-
-Repeat: The script will automatically stop, arm the next track, and start recording again. Repeat this process for all takes.
-
-Done! When all tracks are recorded, the script will notify you. All your takes will be perfectly aligned and organized in the timeline.
-
-We hope this tool enhances your creative workflow. Happy recording!
+*We are Unique Creators, and creation is our passion!*
